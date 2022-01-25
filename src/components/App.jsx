@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {robots as Robots} from "../data/robots.js";
 import CardList from './CardList.jsx';
 import SearchBox from "./SearchBox.jsx";
+import Scroll from "./Scroll.jsx";
+import "../App.css";
 
 const App=()=>{
 
@@ -29,9 +31,11 @@ const App=()=>{
     }
     return(
         <div className="tc">
-            <h1>RoboFriends!</h1>
+            <h1 className="f1">RoboFriends</h1>
             <SearchBox error = {resultError} change={onSearchChange}/>
-            <CardList robots = {robots}/>
+            <Scroll>
+                <CardList robots = {robots}/>
+            </Scroll>
         </div>
     )
 }
